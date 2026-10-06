@@ -1,0 +1,169 @@
+score = 85
+
+# Nested conditional statements
+if score >= 60:
+    if score >= 90:
+        grade = "A"
+    elif score >= 80:
+        grade = "B"
+    else:
+        grade = "C"
+else:
+    grade = "F"
+
+print(f"Grade: {grade}")
+
+# Function definition
+def calculate_area(width, height):
+    """Calculates the area of a rectangle."""
+    return width * height
+
+# Calling the function
+area = calculate_area(5, 10)
+print(f"Area: {area}")
+
+#lambda functions and recursion
+# Recursion: Calculating factorial
+def factorial(n):
+    if n <= 1:
+        return 1
+    return n * factorial(n - 1)
+
+# Lambda function: Anonymous inline function
+square = lambda x: x ** 2
+
+print(f"Factorial of 5: {factorial(5)}")
+print(f"Square of 4: {square(4)}")
+
+
+ #classes and objects
+class Dog:
+    def __init__(self, name):
+        self.name = name
+
+    def bark(self):
+        return f"{self.name} says Woof!"
+
+my_dog = Dog("Buddy")
+print(my_dog.bark())
+
+#file input/output
+# Writing to a file using context manager
+with open("example.txt", "w") as file:
+    file.write("Hello, World!\nLearning Python I/O.")
+
+# Reading from a file
+with open("example.txt", "r") as file:
+    content = file.read()
+    print(content)
+
+
+#exception handling
+try:
+    number = int("invalid_number")
+    result = 10 / 0
+except ValueError as e:
+    print(f"Value Error caught: {e}")
+except ZeroDivisionError as e:
+    print(f"Division Error caught: {e}")
+finally:
+    print("Execution complete.")
+
+
+#lists, tuples, sets, and dictionaries
+    # List (mutable, ordered)
+fruits = ["apple", "banana", "cherry"]
+
+# Tuple (immutable, ordered)
+coordinates = (10.0, 20.0)
+
+# Set (unique items, unordered)
+unique_numbers = {1, 2, 3, 3, 2}  # Result: {1, 2, 3}
+
+# Dictionary (key-value pairs)
+person = {"name": "Alice", "age": 25}
+
+print(fruits, coordinates, unique_numbers, person)
+
+
+# For loop
+for i in range(1, 4):
+    print(f"For loop iteration {i}")
+
+# While loop
+count = 3
+while count > 0:
+    print(f"While loop countdown: {count}")
+    count -= 1
+
+
+
+
+#inheritance and polymorphism
+# Encapsulation
+class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance  # Private attribute
+
+    def get_balance(self):
+        return self.__balance
+
+# Inheritance
+class Animal:
+    def make_sound(self):
+        return "Generic Sound"
+
+class Cat(Animal):
+    # Polymorphism (overriding method)
+    def make_sound(self):
+        return "Meow"
+
+cat = Cat()
+print(cat.make_sound())
+
+
+#modules and packages
+import math
+import os
+
+print(f"Square root of 16: {math.sqrt(16)}")
+print(f"Current Directory: {os.getcwd()}")
+
+
+#pandas library
+import pandas as pd
+
+# Creating a DataFrame
+data = {"Name": ["Alice", "Bob"], "Age": [25, 30]}
+df = pd.DataFrame(data)
+
+# Data filtering
+filtered = df[df["Age"] > 26]
+print(filtered)
+
+#numpy library
+import numpy as np
+
+# Creating arrays
+arr = np.array([1, 2, 3, 4])
+matrix = np.array([[1, 2], [3, 4]])
+
+# Matrix operations
+transposed = matrix.T
+print("Matrix Transpose:\n", transposed) 
+
+#matplotlib 
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Sample Data
+x = [1, 2, 3, 4]
+y = [10, 20, 25, 30]
+
+# Matplotlib plot
+plt.figure()
+sns.lineplot(x=x, y=y)
+plt.title("Sample Line Plot")
+plt.xlabel("X Axis")
+plt.ylabel("Y Axis")
+plt.show()
